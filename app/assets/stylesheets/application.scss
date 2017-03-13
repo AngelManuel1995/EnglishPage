@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+@import 'materialize';
+@import 'materialize/extras/nouislider';
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+.parallax-container1 {
+  height: "200px";
+}
+
+//Color clases
+
+.text-white{
+  color: #ffffff;
+}
+
+//class of text
+.text-right{
+  text-align: right;
+}
+.size-text-button{
+  font-size: 20px;
+}
+
+.size-red{
+  width: 40px;
+  height: 40px;
+}
