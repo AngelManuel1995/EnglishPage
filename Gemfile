@@ -27,6 +27,8 @@ gem 'materialize-sass'
 gem 'jquery-turbolinks'
 # Use gem for authentication
 gem 'devise'
+#Use this gem for log in with facebook
+gem 'omniauth-facebook'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

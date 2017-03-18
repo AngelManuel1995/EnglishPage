@@ -26,6 +26,9 @@ ActiveRecord::Schema.define(version: 20170313035959) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "user_name"
+    t.string   "bio"
+    t.string   "uid"
+    t.string   "provider"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true
