@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   unauthenticated :user do
     root to: 'welcome#index'
   end
+  
+  post '/custom_sign_up', to: "users/omniauth_callbacks#custom_sign_up"  
 
 end

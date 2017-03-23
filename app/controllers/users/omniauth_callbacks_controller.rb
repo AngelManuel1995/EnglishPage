@@ -12,8 +12,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       @user.remember_me = true
       sign_in_and_redirect @user, event: :authentication 
     end    
- 
+    #If the user isn't persistented
+    render :edit  
   end
 
+  def custom_sign_up
+  end  
   
 end
