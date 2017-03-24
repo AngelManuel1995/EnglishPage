@@ -1,21 +1,37 @@
 <div class = "container">
-<%=form_tag "/custom_sign_up" do %>
+<%=form_tag "/custom_sign_up", method: :post do %>
   <ul>
     <%@user.errors.full_messages.each do |error|%>
       <li><%=error%></li>
     <%end%>
   </ul>
   <h2>Complete your register</h2>
-  <div>
-    <%=label_tag "User"%>
-    <%=text_field_tag "user[user_name]", @user.user_name%>
-  </div>
   
   <div>
     <%=label_tag "Email"%>
     <%=text_field_tag "user[email]", @user.email, required: true%>
   </div>
 
+  <div>
+     <%=label_tag "User name"%>
+     <%=text_field_tag "user[user_name]", @user.user_name%>
+  </div> 
+ 
+  <div>
+     <%=label_tag "First name"%>
+     <%=text_field_tag "user[first_name]", @user.first_name%>
+  </div>
+  
+  <div>
+    <%=label_tag "Last name"%>
+    <%=text_field_tag "user[last_name]", @user.last_name%>
+  </div>
+
+  <div>
+    <%=label_tag "Little description" %> 
+    <%=text_area_tag "user[bio]", @user.bio%>
+  </div>
+ 
   <div>
     <%=submit_tag "Complete register", class:"waves waves-effect btn"%>
   </div>

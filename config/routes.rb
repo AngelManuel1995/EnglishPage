@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
+  post "/custom_sign_up", to: "users/omniauth_callbacks#custom_sign_up"  
+
   #root to: 'welcome#index'
   #This devise method allows to show a view when a user could enter to the application
   authenticated :user do
@@ -14,6 +16,5 @@ Rails.application.routes.draw do
     root to: 'welcome#index'
   end
   
-  post '/custom_sign_up', to: "users/omniauth_callbacks#custom_sign_up"  
 
 end

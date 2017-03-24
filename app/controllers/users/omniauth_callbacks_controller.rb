@@ -10,13 +10,18 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if @user.persisted?
       @user.remember_me = true
-      sign_in_and_redirect @user, event: :authentication 
-    end    
-    #If the user isn't persistented
-    render :edit  
-  end
+      if @user.last_name == nil 
+         render :edit
+      else
+        sign_in_and_redirect @user, event: :authentication
+      end
+  
+    end   
+    #session["session.auth"] = request.env["omniauth.auth"] 
+   end 
 
   def custom_sign_up
+    raise params.to_yaml
   end  
   
 end
