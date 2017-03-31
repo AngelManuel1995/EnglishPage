@@ -1,0 +1,22 @@
+<div class = "container">
+  <%= form_for (@course) do |f|%>
+    <div> 
+      <%= f.label "Title"%>
+      <%= f.text_field "title"%>
+    </div>
+    
+    <div>
+      <%= f.label "Description"%>
+      <%= f.text_field "description"%>
+    </div>
+    
+    <div>
+      <%= f.label "Number of credits"%>
+      <%= f.number_field "number_credits"%>
+    </div>     
+    
+    <div>
+       <%= f.submit %>
+    </div>
+  <%end%>
+</div>

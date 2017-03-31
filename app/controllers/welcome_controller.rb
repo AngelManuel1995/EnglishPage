@@ -5,6 +5,7 @@ class WelcomeController < ApplicationController
   end
   ##This action will be execute when the is inside if the page
   def home
+    @courses = Course.all
   end
   
   ##This method returns which layout we will use, taking advantage of action_name

@@ -21,9 +21,11 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 # my gems
-# Use materialize for desing page
+# To use paperclip for using files
+gem 'paperclip', "~> 5.0.0.0"
+# To use materialize for desing page
 gem 'materialize-sass'
-# Use Jquery-turbolinks for Materialize
+# To use Jquery-turbolinks for Materialize
 gem 'jquery-turbolinks'
 # Use gem for authentication
 gem 'devise'

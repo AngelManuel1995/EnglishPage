@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  number_students: 1
+  number_credits: 1
+  teacher_id: 1
+
+two:
+  title: MyString
+  description: MyText
+  number_students: 1
+  number_credits: 1
+  teacher_id: 1
