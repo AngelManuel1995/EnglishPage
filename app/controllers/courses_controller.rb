@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
 
   def index
-  
+    @courses = Course.all 
   end
   
   def new 
@@ -11,10 +11,15 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     if @course.save
-      redirect_to root_path
+      redirect_to courses_path
     end  
   end
  
+  def destroy
+    @course = Course.find(params[:id])
+    @course.destroy
+    redirect_to courses_path
+  end
 
   private 
 

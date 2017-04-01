@@ -14,8 +14,9 @@
     <!-- Dropdown Structure -->
     <nav>
     <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!">Your profile</a></li>
-      <li><a href="#!">Setting</a></li>
+      <li><a href ="#!">Your profile</a></li>
+      <li><a href ="#!">Setting</a></li>
+      <li><%= link_to "Administration", courses_path%></li>  
       <li><%= link_to "log out", destroy_user_session_path, method: :delete%></li>
    </ul>
     <div class="nav-wrapper indigo darken-4">
