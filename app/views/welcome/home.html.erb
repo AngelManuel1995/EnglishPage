@@ -2,6 +2,8 @@
   <% @courses.each do |course| %>
     <span>Title: <span><span><%= course.title %></span><br>
     <span>Description: </span><span><%= course.description %></span><br>
-    <span>Credits: </span><span><%= course.number_credits%></span><hr>
+    <span>Credits: </span><span><%= course.number_credits%></span>
+    <%= link_to "Show", course_path(course)%><hr>
   <% end %>
 </div>
+
