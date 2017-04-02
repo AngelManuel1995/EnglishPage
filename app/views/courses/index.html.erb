@@ -16,8 +16,8 @@
                <strong><%= course.number_credits%></strong></p>
              </div>
              <div class = "card-action">
-               <a href="#">Show</a>
-               <a href="#">Edit</a>
+               <%= link_to "Show", course_path(course)%>
+               <%= link_to "Edit", edit_course_path(course)%>
                <%= link_to "Delete", course_path(course), method: :delete, data: {confirm: 'Are you sure?'} %>
              </div>
            </div>
