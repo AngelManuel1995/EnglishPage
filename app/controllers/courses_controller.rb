@@ -1,4 +1,6 @@
 class CoursesController < ApplicationController
+  ##Here we talk that before the show , edit, update, destroy actions we will do set_course 
+  before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   ##In this action we load each course  
   def index
@@ -12,11 +14,9 @@ class CoursesController < ApplicationController
 
   ##In this action we can showing a course
   def show
-    @course = Course.find(params[:id])
   end
 
   def edit
-    @course = Course.find(params[:id])
   end
   
   ##In this action we create a course with all its parameters
@@ -28,7 +28,6 @@ class CoursesController < ApplicationController
   end
 
   def update
-    @course = Course.find(params[:id])
 
     if @course.update(course_params)
       redirect_to courses_path
@@ -39,16 +38,20 @@ class CoursesController < ApplicationController
  
   ##In this action we delete the course
   def destroy
-    @course = Course.find(params[:id])
     @course.destroy
 
     redirect_to courses_path
   end
 
   private 
+   
+  def set_course
+    @course = Course.find(params[:id])
+  end
 
   def course_params
     params.require(:course).permit(:title, :description, :number_credits)
   end
+
 
 end
