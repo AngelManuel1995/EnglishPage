@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   
   ##Routes for courses
   resources :courses
+
+  ##Routes for articles
+  resources :articles   
   
   #root to: 'welcome#index'
   #This devise method allows to show a view when a user could enter to the application

@@ -1,0 +1,9 @@
+<h5>This is the index for articles</h5>
+
+<%= link_to "New article", new_article_path%>
+<hr>
+<% @articles.each do |article| %>
+  <%= article.title%><br> 
+  <%= article.body%><br><br>
+<% end %>
+

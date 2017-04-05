@@ -22,7 +22,7 @@
     <div class="nav-wrapper indigo darken-4">
       <a href="#!" class="dropdown-button right" data-activates = "dropdown1"><%=current_user.user_name%><i class = "material-icons right">arrow_drop_down</i></a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="#">Our blog</a></li>
+        <li><%= link_to "Our blog", articles_path%></a></li>
         <li><a href="#">Social network</a></li>
         <li><a href="#"></a></li>
       </ul>

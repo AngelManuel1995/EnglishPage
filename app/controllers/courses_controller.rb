@@ -22,25 +22,32 @@ class CoursesController < ApplicationController
   ##In this action we create a course with all its parameters
   def create
     @course = Course.new(course_params)
-    if @course.save
-      redirect_to courses_path
+
+    respond_to do |format|
+      if @course.save
+        format.html{redirect_to courses_path, notice: 'Course created sucessful.'}
+      else
+        format.html{render 'new'}
+      end
     end  
   end
 
   def update
-
-    if @course.update(course_params)
-      redirect_to courses_path
-    else
-      render 'edit'
+    respond_to do |format|
+      if @course.update(course_params)
+       format.html{ redirect_to courses_path, notice: 'Course updated sucessful.'}
+      else
+        format.hmlt{render 'edit'}
+      end
     end
   end
  
   ##In this action we delete the course
   def destroy
     @course.destroy
-
-    redirect_to courses_path
+    respond_to do |format| 
+      format.html{redirect_to courses_path, notice: 'Course deleted sucessful.'}
+    end
   end
 
   private 

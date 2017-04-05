@@ -1,8 +1,9 @@
 <div class = "container"> 
 
    <h1 class = "center">Admistration of the courses</h1>
-   <%= link_to "New course", new_course_path%>
+   <%= link_to "New course", new_course_path, class:"btn"%>
    <hr>
+   <%= flash[:notice]%>
    <% if @courses.count == 0%>
      <h3 class = "center">Sorry, We haven't courses</h3>
    <%else%>
