@@ -1,14 +1,21 @@
 class ArticlesController < ApplicationController
 
+   before_action :set_article, only:[:show,:edit, :update, :destroy]
+
    def index
      @articles = Article.all
    end
    
+   def show
+   end
 
    def new
      @article = Article.new   
    end
 
+   def edit
+   
+   end
 
    def create
      @article = Article.new(article_params)
@@ -23,10 +30,33 @@ class ArticlesController < ApplicationController
 
    end
 
+   def update
+     
+     respond_to do |format|
+       if @article.update(article_params)
+         format.html {redirect_to articles_path, notice:'Article updated sucessful'}
+       else
+         format.html {render 'edit'}
+       end
+ 
+     end   
+
+   end
+
+   def destroy 
+     @article.destroy
+     respond_to do |format|
+       format.html{redirect_to articles_path, notice:'Article deleted sucessful'} 
+     end
+   end
+
    private 
    
    def article_params
      params.require(:article).permit(:title, :body)
    end
 
+   def set_article
+     @article = Article.find(params[:id])
+   end
 end
