@@ -13,21 +13,21 @@
     <p class="alert"><%= alert %></p>-->
     <!-- Dropdown Structure -->
     <nav>
-    <ul id="dropdown1" class="dropdown-content">
-      <li><a href ="#!">Your profile</a></li>
-      <li><a href ="#!">Setting</a></li>
-      <li><%= link_to "Administration", courses_path%></li>  
-      <li><%= link_to "log out", destroy_user_session_path, method: :delete%></li>
-   </ul>
-    <div class="nav-wrapper indigo darken-4">
-      <a href="#!" class="dropdown-button right" data-activates = "dropdown1"><%=current_user.user_name%><i class = "material-icons right">arrow_drop_down</i></a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><%= link_to "Our blog", articles_path%></a></li>
-        <li><a href="#">Social network</a></li>
-        <li><a href="#"></a></li>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href ="#!">Your profile</a></li>
+        <li><a href ="#!">Setting</a></li>
+        <li><%= link_to "Administration", courses_path%></li>  
+        <li><%= link_to "log out", destroy_user_session_path, method: :delete%></li>
       </ul>
-    </div>
-  </nav>
+      <div class="nav-wrapper navbar-fixed  indigo darken-4">
+        <a href="#!" class="dropdown-button right" data-activates = "dropdown1"><%=current_user.user_name%><i class = "material-icons right">arrow_drop_down</i></a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><%= link_to "Our blog", articles_path%></a></li>
+          <li><a href="#">Social network</a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </div>
+    </nav>
    <%= yield %>
 
 

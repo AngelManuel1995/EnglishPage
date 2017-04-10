@@ -1,13 +1,25 @@
-<div class="container">
+<div class="container-fluid">
   <div class = "row center">
     <h3>Our courses.</h3>
     <span>Choose any one </span>
   </div>
-  <% @courses.each do |course| %>
-    <span>Title: <span><span><%= course.title %></span><br>
-    <span>Description: </span><span><%= course.description %></span><br>
-    <span>Credits: </span><span><%= course.number_credits%></span>
-    <%= link_to "Show", course_path(course)%><hr>
-  <% end %>
+  <div class = "row">
+    <% @courses.each do |course| %>
+      <div class = "col s12 m3">
+        <div class = "card"> 
+          <div class = "card-image max-card-test">
+            <%= link_to image_tag course.cover.url(:medium)%>
+            <span class = "card-title center"><strong> <%=link_to course.title, course_path(course) %></strong> </span>
+          </div>
+          <div class = "card-content text-justify">
+            <p><%= truncate(course.description, length:183)%></p>
+          </div>
+          <div class = "card-action">
+            <%= link_to "Go on", course_path(course)%>
+          </div>
+        </div>  
+      </div>  
+    <% end %>
+  </div>
 </div>
 
