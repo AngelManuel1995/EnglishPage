@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,:omniauthable,
 	 :omniauth_providers => [:facebook]
+
+  #Validations: we'll do the validation in each correspond model for each field of the daba base y it will be with the word validates and we will put the name that we'll validate and the validation example
   
   #This method is for creating a new user athenticated with facebook and we are going to describe each step in its construction
  

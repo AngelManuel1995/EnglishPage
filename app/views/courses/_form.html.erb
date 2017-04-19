@@ -2,22 +2,22 @@
   <%= form_for (@course) do |f|%>
     <div> 
       <%= f.label "Title"%>
-      <%= f.text_field "title"%>
+      <%= f.text_field "title", required: true%>
     </div>
     
     <div>
       <%= f.label "Description"%>
-      <%= f.text_field "description"%>
+      <%= f.text_area "description", required: true%>
     </div>
     
     <div>
       <%= f.label "Number of credits"%>
-      <%= f.number_field "number_credits"%>
+      <%= f.number_field "number_credits", required: true%>
     </div>     
 
     <div>
       <%= f.label "Image - logo "%>
-      <%= f.file_field "cover"%>
+      <%= f.file_field "cover", required: true%>
     </div>  
     
     <div>
