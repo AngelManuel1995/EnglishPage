@@ -1,4 +1,4 @@
-<div class = "container"> 
+<div class = "container-fluid"> 
 
    <h1 class = "center">Admistration of the courses</h1>
    <%= link_to "New course", new_course_path, class:"btn"%>
@@ -10,11 +10,10 @@
    <%else%>
      <div class = "row">
        <% @courses.each do |course| %>
-         <div class = "col s12 m4">
+         <div class = "col s12 m2">
            <div class = "card blue-grey darken-1">
              <div class = "card-content white-text">
                <strong><span class = "center"><%=course.title%></span></strong>
-               <p><%= truncate(course.description, length:80) %></p>
 	       <strong><span>Credits: </span></strong> <span><%= course.number_credits%></span> 
              </div>
              <div class = "card-action">

@@ -37,7 +37,7 @@ class CoursesController < ApplicationController
       if @course.update(course_params)
        format.html{ redirect_to courses_path, notice: 'Course updated sucessful.'}
       else
-        format.hmlt{render 'edit'}
+        format.html{render 'edit'}
       end
     end
   end
