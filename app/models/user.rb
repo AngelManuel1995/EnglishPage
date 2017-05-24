@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,:omniauthable,
 	 :omniauth_providers => [:facebook]
-  
+ 
   #This method is for creating a new user athenticated with facebook and we are going to describe each step in its construction
  
   #This method will be called from the controller and it's a class method because it don't needs to be instanced
@@ -14,6 +14,7 @@ class User < ApplicationRecord
   #Finaly we are going to a password for completing the user's creation.
   #This method are going to call from users' controller. 
 
+  has_many :articles
 
   def self.from_omniath(auth) 
     where(provider: auth[:provider], uid: auth[:uid]).first_or_create do |user|

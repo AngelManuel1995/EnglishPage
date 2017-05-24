@@ -17,3 +17,19 @@
 //= require materialize-sprockets
 //= require materialize/extras/nouislider
 //= require_tree .
+
+$(document).ready(function(){
+  $("#newArticle").on("click", function(){
+    $("#newArticleDiv").removeClass("hidden_tag");
+    $("#newArticle").addClass("hidden_tag");
+    $("#cancelArticle").removeClass("hidden_tag");
+  }); 
+  
+  $("#cancelArticle").on("click", function(){
+    $("#newArticleDiv").addClass("hidden_tag");
+    $("#newArticle").removeClass("hidden_tag");
+    $("#cancelArticle").addClass("hidden_tag");
+  });
+  
+});
+
